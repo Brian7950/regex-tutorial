@@ -33,7 +33,9 @@ let result = emailRegex.test(testString); // TRUE
 
 ### ^ - The caret anchor matches the beginning of the text 
 #### For example, in our expression ```/^([a-zA-Z0-9_\-\.]+)``` we are indicating that our string should start with either ```A-z```, a number ```0-9```, an underscore ```"_"```, a hyphen ```"-"```, or a period ```"."```
-#### ```regexTest = /^(a-z)/```
+#### Another example ```regexTest = /^(a-z)/``` <br> if we ran ```regexTest.test("!hello everyone")``` it would return FALSE becuase the string does not begin with characters a-z.<br>If our expression read as ```regexTest = /^(!)/```<br> Then that would indicate that our string MUST begin with "!" for it to return true. 
+
+
 
 
 ## $ - The dollarsign anchor states that it must end with the characters that preceded it 
