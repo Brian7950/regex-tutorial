@@ -40,7 +40,19 @@ let result = emailRegex.test(testString); // TRUE
 ### $ - The dollarsign anchor states that it must end with the characters that preceded it 
 #### Our code <br>```([a-zA-Z]{2,5})$/```<br>signifies the string must end in with uppercase or lowercase characters, don't worry about the {2,5} we will cover that a little later.<br>Because this checks for email something like .com, .org, .co would all be valid entries. <br>If the string ended with .123 or .com! it would return false because anything besides a-z is not allowed. 
 
-## Quantifiers
+## Quantifiers 
+### With regex we can control how many times a pattern or character should appear. With our code <br>
+```javascript
+const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+```
+### we can spot the + symbol insdie 
+```Javascript
+ /^([a-zA-Z0-9_\-\.]+)
+ //second set after the @
+ ([a-zA-Z0-9_\-\.]+)
+ ```
+ ### This indicates that the pattern of letters, numbers, underscore or dash can be repeated more than once. 
+
 
 
 ### OR Operator
