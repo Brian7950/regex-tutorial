@@ -3,7 +3,7 @@
 
 ## Summary
 ## The piece of Regular Expressions I'd like to break down is this 
-const emailRegex = 	/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/; 
+```javascript const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/; ```
 let testString = "Some_Email@ABC123.org";
 let result = emailRegex.test(testString); // TRUE
 
@@ -28,7 +28,7 @@ let result = emailRegex.test(testString); // TRUE
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 # Regex Components
-### Anchors <a name="anchors"></a>
+## Anchors <a name="anchors"></a>
 ### Anchors in regex can be thought up as characters that don't belong to the actual string, but rather allow one to match a position before or after a character in the string. 
 
 ### ^ - The caret anchor matches the beginning of the text 
@@ -38,7 +38,7 @@ let result = emailRegex.test(testString); // TRUE
 ### $ - The dollarsign anchor states that it must end with the characters that preceded it 
 #### Our code <br>```([a-zA-Z]{2,5})$/```<br>signifies the string must end in with uppercase or lowercase characters, don't worry about the {2,5} we will cover that a little later.<br>Because this checks for email something like .com, .org, .co would all be valid entries. <br>If the string ended with .123 or .com! it would return false because anything besides a-z is not allowed. 
 
-### Quantifiers
+## Quantifiers
 
 
 ### OR Operator
