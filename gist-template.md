@@ -45,15 +45,24 @@ let result = emailRegex.test(testString); // TRUE
 ```javascript
 const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 ```
-### we can spot the + symbol insdie 
+### we can spot the + symbol inside
 ```Javascript
+//first half before the @
  /^([a-zA-Z0-9_\-\.]+)
  //second set after the @
  ([a-zA-Z0-9_\-\.]+)
  ```
- ### This indicates that the pattern of letters, numbers, underscore or dash can be repeated more than once. 
+ ### This indicates that the pattern of letters, numbers, underscore or dash can be repeated more than once. If my entry was "P@J" this would be valid as well as "ZZZZZZZZZ@1" The quantafier (+) indicates that we CAN repeat the preceding pattern 1 or more times
+ 
+ ### The other quantifier is towards the end of our code enclosed by curly brackets {}
+ ```Javascript
+ ///this pattern is for the domain extension
+ ([a-zA-Z]{2,5})$/;
+ ```
+ ### We see<br> ```{2,5}```<br> this indicates that our pattern must repeat a minimum of 2 times but no more than 5 times this is a little more close ended than our previous quantifier of "+". It wouldn't make much sense to have + as a domain extension because most are about 3 letter words such as .com or .org. Leaving the pattern with + would open us up to full words and likely fake extensions. 
 
 
+ 
 
 ### OR Operator
 ### With regex we can use an or operator by using the pipe key (|) not to be confused with (I). Using | allows multiple matches to exist if one is looking for an exact match or variation
