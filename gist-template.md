@@ -32,13 +32,14 @@ let result = emailRegex.test(testString); // TRUE
 ### Anchors in regex can be thought up as characters that don't belong to the actual string, but rather allow one to match a position before or after a character in the string. 
 
 ### ^ - The caret anchor matches the beginning of the text 
-#### For example, in our expression ```/^([a-zA-Z0-9_\-\.]+)``` we are indicating that our string should start with either ```A-z```, a number ```0-9```, an underscore ```"_"```, a hyphen ```"-"```, or a period ```"."```
-#### Another example ```regexTest = /^(a-z)/``` <br> if we ran ```regexTest.test("!hello everyone")```<br> it would return FALSE becuase the string does not begin with characters a-z.<br>If our expression read as ```regexTest = /^(!)/```<br> Then that would indicate that our string MUST begin with "!" for it to return true, then our original  ```regexTest.test("!hello everyone")``` would return true. 
+#### For example, in our expression<br> ```/^([a-zA-Z0-9_\-\.]+)```<br> we are indicating that our string should start with either "A-z", a number "0-9", an underscore "_", a hyphen "-", or a period "."
+#### Another example <br>```regexTest = /^(a-z)/``` <br> if we ran <br>```regexTest.test("!hello everyone")```<br> it would return FALSE becuase the string does not begin with characters a-z.<br>If our expression read as <br>```regexTest = /^(!)/```<br> Then that would indicate that our string MUST begin with "!" for it to return true, then our original <br> ```regexTest.test("!hello everyone")```<br> would return true. 
 
 ### $ - The dollarsign anchor states that it must end with the characters that preceded it 
-#### Our code ```([a-zA-Z]{2,5})$/```<br>signifies the string must end in with uppercase or lowercase characters, don't worry about the {2,5} we will cover that a little later.<br>Because this checks for email something like .com, .org, .co would all be valid entries. <br>If the string ended with .123 or .com! it would return false because anything besides a-z is not allowed. 
+#### Our code <br>```([a-zA-Z]{2,5})$/```<br>signifies the string must end in with uppercase or lowercase characters, don't worry about the {2,5} we will cover that a little later.<br>Because this checks for email something like .com, .org, .co would all be valid entries. <br>If the string ended with .123 or .com! it would return false because anything besides a-z is not allowed. 
 
 ### Quantifiers
+
 
 ### OR Operator
 ### With regex we can use an or operator by using the pipe key (|) not to be confused with (I). Using | allows multiple matches to exist if one is looking for an exact match or variation
