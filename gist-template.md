@@ -3,9 +3,11 @@
 
 ## Summary
 ## The piece of Regular Expressions I'd like to break down is this 
-```javascript const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/; ```
+```javascript
+const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 let testString = "Some_Email@ABC123.org";
 let result = emailRegex.test(testString); // TRUE
+```
 
 ### The first line is an expression that would check for a valid email address
 ### The second line is our test string  
