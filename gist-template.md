@@ -109,15 +109,24 @@ _\-\.]+)@
 // We have a set of ranges per each group, this is the last range in our example 
 [a-zA-Z]
 ```
-### Here we are saying any character between a-z works regardless of pattern. All of these examples would return true<br>```"apples", "hi", "sdsdsa", "bbbbbbbbbbbbb"```<br> In our example of bracket expression we are saying find any character or string regardless of length so long as its between a-z. The hyphen allows us to say anything between otherwise we would have to right something along the lines of <br>```[abcdef....]```<br>
+### Here we are saying any character between a-z works regardless of pattern. All of these examples would return true<br>```"apples", "hi", "sdsdsa", "bbbbbbbbbbbbb"```<br>In our example of bracket expression we are saying find any character or string regardless of length so long as its between a-z. The hyphen allows us to say anything between otherwise we would have to right something along the lines of <br>```[abcdef....]```<br>
 
-### Greedy and Lazy Match <a name="greedy-and-lazy-match"></a>
+## Greedy and Lazy Match <a name="greedy-and-lazy-match"></a>
+### By default quantifiers are greedy, meaning they will match all possible characters, to make a quantifier lazy we would simply add a "?" following any quantifier.<br>Another way to think of this is Greedy will keep searching the pattern until the condition is NOT satisfied<br>Lazy stops searchingthe second the condition has been met.<br>We don't have any Lazy match set in our expression.<br>Our first group
+```javascript
+([a-zA-Z0-9_\-\.]+)
+```
+### would keep highlighting our pattern and saying yes as the pattern grew so long as it followed the pattern.<br>A Lazy match might look like
+```javascript
+([a-zA-Z0-9_\-\.]+?)
+```
+### where our expression would accept the first instance of a pattern match, so as early as entering the first character. 
 
-### Boundaries
+## Boundaries <a name="boundaries"></a>
 
-### Back-references
+## Back-references <a name="back-references"></a>
 
-### Look-ahead and Look-behind
+## Look-ahead and Look-behind <a name="look-ahead-and-look-behind"></a>
 
 ## Author
 
