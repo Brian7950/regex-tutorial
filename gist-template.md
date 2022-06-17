@@ -86,7 +86,7 @@ _\-\.]+)@
 ```javascript
 ([a-zA-Z]{2,5})$/i
 ```
-### The i preceeding the closing / indicates that the entire expression can ignore case, this would remove the need to indicate<br>```[a-zA-Z]```<br>
+### The i following the closing / indicates that the entire expression can ignore case, this would remove the need to indicate<br>```[a-zA-Z]```<br>
 
 ## Grouping and Capturing <a name="grouping-and-capturing"></a>
 ### Grouping is denoted by paranthesis () in our example we have created 3 groups to allow for the string to be broken up and follow specific rules depending on the section or the string<br>Our first group is 
@@ -101,10 +101,15 @@ _\-\.]+)@
 ```javascript
 /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 ```
-### The final group or rules follows a period and only 2-5 characters in length. For example Email@SomeDomain.ORG
+### The final group or rules follows a period and only 2-5 characters in length. For example `Email@SomeDomain.ORG`
 
-
-### Bracket Expressions <a name="bracket-expressions"></a>
+## Bracket Expressions <a name="bracket-expressions"></a>
+### Bracket expressions are inside square brackets []. This kind of expression is used for ranges. We have a few in our expression 
+```Javascript
+// We have a set of ranges per each group, this is the last range in our example 
+[a-zA-Z]
+```
+### Here we are saying any character between a-z works regardless of pattern. All of these examples would return true<br>```"apples", "hi", "sdsdsa", "bbbbbbbbbbbbb"```<br> In our example of bracket expression we are saying find any character or string regardless of length so long as its between a-z. The hyphen allows us to say anything between otherwise we would have to right something along the lines of <br>```[abcdef....]```<br>
 
 ### Greedy and Lazy Match <a name="greedy-and-lazy-match"></a>
 
