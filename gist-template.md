@@ -61,16 +61,29 @@ const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
  ```
  ### We see<br> ```{2,5}```<br> this indicates that our pattern must repeat a minimum of 2 times but no more than 5 times this is a little more close ended than our previous quantifier of "+". It wouldn't make much sense to have + as a domain extension because most are about 3 letter words such as .com or .org. Leaving the pattern with + would open us up to full words and likely fake extensions. 
 
+## OR Operator
+### The OR Operator is a denoted by the | character, usually used with grouping. Not used current example
 
- 
+## Character Classes
+### Character classes match the specific set of characters requested
+```Javascript
+[a-zA-Z0-9_\-\.]
+``` 
+### here we have multiple character sets stating any character that matches these rules<br>a-zA-z represents any letter lowercase or uppercase, any digit.<br>The caracter also get into specific when we specifically name characters for example<br>
+```Javascript
+_\-\.]+)@
+```
+### in the preceding example we have specific characters being called "_", "-", ".", @. You'll notice that both the hyphen"-" or the "." both have a backslash \ before the character. This is an escape character as those characters without the escape have special meanings.<br> The "@" indicates that following that first group a @ character is needed there.<br>We could also replace our first group with the dot character class.
+```Javascript
+//works like /^([a-zA-Z0-9_\-\.]+)@
+/^(.+)@/
+```
+### using "." withouth a character escape matching any characters except for linebreaks. We would essentially be saying the same thing with this notation.<br>Notice that we have <br>```([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$```<br> here our character class is again called for specifically with<br>```\.```<br> stating we need a period in that possition and not any character. 
 
-### OR Operator
-### With regex we can use an or operator by using the pipe key (|) not to be confused with (I). Using | allows multiple matches to exist if one is looking for an exact match or variation
-#### Ex. 
 
-### Character Classes
 
-### Flags
+## Flags
+### Character classes 
 
 ### Grouping and Capturing
 
