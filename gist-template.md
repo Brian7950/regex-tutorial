@@ -40,7 +40,7 @@ let result = emailRegex.test(testString); // TRUE
 ### $ - The dollarsign anchor states that it must end with the characters that preceded it 
 #### Our code <br>```([a-zA-Z]{2,5})$/```<br>signifies the string must end in with uppercase or lowercase characters, don't worry about the {2,5} we will cover that a little later.<br>Because this checks for email something like .com, .org, .co would all be valid entries. <br>If the string ended with .123 or .com! it would return false because anything besides a-z is not allowed. 
 
-## Quantifiers 
+## Quantifiers <a name="quantifiiers"></a>
 ### With regex we can control how many times a pattern or character should appear. With our code <br>
 ```javascript
 const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
@@ -61,10 +61,10 @@ const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
  ```
  ### We see<br> ```{2,5}```<br> this indicates that our pattern must repeat a minimum of 2 times but no more than 5 times this is a little more close ended than our previous quantifier of "+". It wouldn't make much sense to have + as a domain extension because most are about 3 letter words such as .com or .org. Leaving the pattern with + would open us up to full words and likely fake extensions. 
 
-## OR Operator
+## OR Operator <a name="or-operator"></a>
 ### The OR Operator is a denoted by the | character, usually used with grouping. Not used current example
 
-## Character Classes
+## Character Classes <a name="character-classes"></a>
 ### Character classes match the specific set of characters requested
 ```Javascript
 [a-zA-Z0-9_\-\.]
@@ -78,18 +78,35 @@ _\-\.]+)@
 //works like /^([a-zA-Z0-9_\-\.]+)@
 /^(.+)@/
 ```
-### using "." withouth a character escape matching any characters except for linebreaks. We would essentially be saying the same thing with this notation.<br>Notice that we have <br>```([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$```<br> here our character class is again called for specifically with<br>```\.```<br> stating we need a period in that possition and not any character. 
+### Using "." without a character escape matching any characters except for linebreaks. We would essentially be saying the same thing with this notation.<br>Notice that we have <br>```([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$```<br> here our character class is again called for specifically with<br>```\.```<br> stating we need a period in that possition and not any character. 
+### There is more than one way to specify what characters to select.
+
+## Flags <a name="flags"></a>
+### Flags are located at the end of the closing "/" Our example does not use any flags an example of what this might look like is 
+```javascript
+([a-zA-Z]{2,5})$/i
+```
+### The i preceeding the closing / indicates that the entire expression can ignore case, this would remove the need to indicate<br>```[a-zA-Z]```<br>
+
+## Grouping and Capturing <a name="grouping-and-capturing"></a>
+### Grouping is denoted by paranthesis () in our example we have created 3 groups to allow for the string to be broken up and follow specific rules depending on the section or the string<br>Our first group is 
+```javascript
+/^([a-zA-Z0-9_\-\.]+)
+```
+### This group is before our @ allows for the first half part of an email address. The next group or rules we need are the same but we have specified that this pattern must follow the @ 
+```Javascript
+/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)
+```
+### this for example says email@somedomain<br>Lastly our final group is only characters and a quantifier with specific settings, this is to say that the last group can only be a letter of length n 
+```javascript
+/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+```
+### The final group or rules follows a period and only 2-5 characters in length. For example Email@SomeDomain.ORG
 
 
+### Bracket Expressions <a name="bracket-expressions"></a>
 
-## Flags
-### Character classes 
-
-### Grouping and Capturing
-
-### Bracket Expressions
-
-### Greedy and Lazy Match
+### Greedy and Lazy Match <a name="greedy-and-lazy-match"></a>
 
 ### Boundaries
 
