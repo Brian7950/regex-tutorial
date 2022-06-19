@@ -123,6 +123,12 @@ _\-\.]+)@
 ### where our expression would accept the first instance of a pattern match, so as early as entering the first character. 
 
 ## Boundaries <a name="boundaries"></a>
+### Boundaries are not exercised in these example. A quick example of boundaries are to match a certain word. It begins with \b to indicate the start of character or word you're looking for. For example take the string<br>"Sorry about Jason's rocks"
+```Javascript
+/s\b/
+```
+### With this we are stating locate where the character s is found at the end of a word. In our case it would return s at the end of Jason's
+
 
 ## Back-references <a name="back-references"></a>
 
