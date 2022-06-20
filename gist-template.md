@@ -131,9 +131,12 @@ _\-\.]+)@
 
 
 ## Back-references <a name="back-references"></a>
+### back-refernces are not used in this regular expression example. They are used to look for the previous group that was specified
 
 ## Look-ahead and Look-behind <a name="look-ahead-and-look-behind"></a>
+### look-ahead and look-behind also known as lookaround are not referenced in our example.<br>An example of these is X(?=Y), saying look for x and check to see if y pattern follows it if so its valid, otherwise ignore. 
 
 ## Author
+### Brian H. 
 
 A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
